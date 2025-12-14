@@ -61,5 +61,18 @@ namespace EspacioFabricaPersonajes
             return Apodo;
         }
 
+        // metodo para generar fechas aleatorios //
+        public static DateTime ObtenerFecha(DateTime fechaInicio, DateTime fechaFinal)
+        {
+            // obtenemos el numero de ticks de cada fecha //
+            long TicksFechaInicio = fechaInicio.Ticks;
+            long TicksFechaFinal = fechaFinal.Ticks;
+            // generamos un numero aleatorio de ticks entre ese rango //
+            long Aleatorio = new Random().NextInt64(TicksFechaInicio,TicksFechaFinal);
+            // generamos la fecha //
+            DateTime fechaGenerada = new DateTime(Aleatorio);
+            return fechaGenerada;
+        }
+
     }
 }

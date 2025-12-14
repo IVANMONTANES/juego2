@@ -5,20 +5,7 @@ namespace EspacioApi
 {
     public static class Api
     {
-        public static async Task<HttpRequestMessage> HacerPeticion(HttpClient client, string endPoint)
-        {
-            var filtros = new 
-            {
-                count = 5,
-                start =  "1200-01-01",
-                end = "1800-01-01",
-                format = "Y-m-d"
-            };
-
-            string cadenaJson = JsonSerializer.Serialize(filtros);
-            var contenido = new StringContent(cadenaJson,Encoding.UTF8,"application/json");
-            HttpResponseMessage
-        }
+        
         public static async Task<HttpResponseMessage> ObtenerRespuesta(HttpClient client, string endPoint)
         {
 
