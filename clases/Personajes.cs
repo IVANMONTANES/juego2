@@ -18,6 +18,18 @@
         public int Nivel {get;set;}
         public int Armadura {get;set;}
         public int Salud {get;set;}
+
+        // metodos //
+        public void MostrarCaracteristicas()
+        {
+            Console.WriteLine("- CARACTERISTICAS");
+            Console.WriteLine($"Velocidad: {this.Velocidad}");
+            Console.WriteLine($"Destreza: {this.Destreza}");
+            Console.WriteLine($"Fuerza: {this.Fuerza}");
+            Console.WriteLine($"Nivel: {this.Nivel}");
+            Console.WriteLine($"Armadura: {this.Armadura}");
+            Console.WriteLine($"Salud: {this.Salud}");
+        }
     }
 
     public class Datos
@@ -36,11 +48,34 @@
         public string Apodo {get;set;}
         public DateTime FechaNac {get;set;}
         public int Edad {get;set;}
+
+        // metodos //
+        public void MostrarDatos()
+        {
+            Console.WriteLine("- DATOS");
+            Console.WriteLine($"Tipo: {this.Tipo}");
+            Console.WriteLine($"Fecha Nacimiento: {this.FechaNac.ToString("d MMM yyyy")}");
+            Console.WriteLine($"Edad: {this.Edad}\n");
+        }
     }
 
     public class Personaje
     {
+        public Personaje(Datos datos, Caracteristicas caracteristicas)
+        {
+            this.datos = datos;
+            this.caracteristicas = caracteristicas;
+        }
+
         public Datos datos {get;set;}
         public Caracteristicas caracteristicas {get;set;}
+
+        // metodos //
+        public void MostrarPersonaje()
+        {
+            Console.WriteLine($"========== {this.datos.Nombre} {this.datos.Apodo} ==========");
+            this.datos.MostrarDatos();
+            this.caracteristicas.MostrarCaracteristicas();
+        }
     }
 }

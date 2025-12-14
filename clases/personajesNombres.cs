@@ -45,45 +45,43 @@
     public static class Apodos
     {
         public static string[] Vampiros = {
-        "El Nocturno", "Colmillo de Sombra", "Sangre Eterna", "La Niebla Roja",
-        "Señor de la Oscuridad", "Susurro Mortal", "Ojo Carmesí", "El Acechador",
-        "Corazón Helado", "Alma Perdida", "El Silencioso", "Velo de Medianoche",
-        "Danza de Sombras", "El Errante", "Sombra Carmesí", "La Condesa Negra",
-        "Susurro del Abismo", "Guardia de la Luna", "El Inmortal", "Filo de Noche",
-        "El Vigilante", "Cuervo Carmesí", "El Lóbrego", "Sombra Errante",
-        "El Voraz", "El Fantasma", "El Penumbroso", "El Cruel",
-        "La Sombra Venenosa", "El Tenebroso", "El Elegido de la Noche", "Colmillo Helado",
-        "El Despiadado", "El Solitario", "El Enigmático", "Velo de Sangre",
-        "El Errante de Medianoche", "El Susurrante", "Ojo de Penumbra", "El Profano"
+        "El Nocturno", "El Colmillo de Sombra", "El Sangre Eterna", "El Acechador",
+        "El Señor de la Oscuridad", "El Susurro Mortal", "El Ojo Carmesí", "El Lóbrego",
+        "El Corazón Helado", "El Silencioso", "El Errante", "El Velo de Medianoche",
+        "El Danza de Sombras", "El Voraz", "El Penumbroso", "El Filo de Noche",
+        "El Vigilante", "El Guardián de la Luna", "El Fantasma", "La Sombra Carmesí",
+        "El Tenebroso", "La Condesa Negra", "El Profano", "El Elegido de la Noche",
+        "El Despiadado", "El Solitario", "El Enigmático", "La Velo de Sangre",
+        "El Errante de Medianoche", "El Susurrante", "El Ojo de Penumbra", "La Alma Perdida",
+        "El Voraz", "El Silencioso", "El Acechador", "La Reina de Sombras",
+        "El Implacable", "El Errante", "El Lóbrego", "La Sombra Venenosa"
         };
 
         public static string[] HombresLobo = {
-        "El Aullador", "Colmillo de Plata", "Sombra del Bosque", "La Garra Nocturna",
-        "Lobo Errante", "Ojo de Luna", "El Voraz", "Furia Carmesí",
-        "El Solitario", "Susurro de Sombras", "El Salvaje", "Danza de Lobos",
-        "Cazador de Medianoche", "El Errante", "Garras Heladas", "Velo de Penumbra",
-        "El Alfa", "Sombra Errante", "El Profundo", "El Penumbroso",
-        "Ojo de Penumbra", "Colmillo Helado", "El Acechador", "El Feral",
-        "Guardia de la Luna", "El Tenebroso", "El Lóbrego", "Filo de Noche",
-        "El Temerario", "El Silencioso", "El Errante de la Noche", "Velo de Sangre",
-        "El Fulgor Lunar", "El Implacable", "El Enigmático", "Rastro de Sombras",
+        "El Aullador", "El Colmillo de Plata", "El Sombra del Bosque", "El Garra Nocturna",
+        "El Lobo Errante", "El Ojo de Luna", "El Voraz", "El Furia Carmesí",
+        "El Solitario", "El Susurro de Sombras", "El Salvaje", "El Danza de Lobos",
+        "El Cazador de Medianoche", "El Errante", "El Garras Heladas", "El Velo de Penumbra",
+        "El Alfa", "El Sombra Errante", "El Profundo", "El Penumbroso",
+        "El Ojo de Penumbra", "El Colmillo Helado", "El Acechador", "El Feral",
+        "El Guardia de la Luna", "El Tenebroso", "El Lóbrego", "El Filo de Noche",
+        "El Temerario", "El Silencioso", "El Errante de la Noche", "El Velo de Sangre",
+        "El Fulgor Lunar", "El Implacable", "El Enigmático", "El Rastro de Sombras",
         "El Voraz de Medianoche", "El Aullido Mortal", "El Despiadado", "El Profano"
         };
 
+
         public static string[] Magos = {
-        "El Arcano", "Maestro de los Elementos", "Señor de Runas", "El Conjurador",
-        "Vidente de Sombras", "El Enigmático", "Portador de Luz", "Tejedor de Hechizos",
-        "Guardia del Grimoire", "El Sabio", "Mente de Fuego", "El Eterno",
-        "Hechicero Nocturno", "El Ilusionista", "Voz del Abismo", "El Profeta",
-        "Custodio de la Magia", "El Misterioso", "El Antiguo", "El Invocador",
-        "Maestro de Encantamientos", "El Tenebroso", "El Sabio Errante", "Portador de Runas",
-        "El Arcano de Medianoche", "Tejedor de Sombras", "El Dominante", "El Iluminado",
-        "El Guardián de Portales", "Señor del Viento", "El Profano", "Voz de los Elementos",
+        "El Arcano", "El Maestro de los Elementos", "El Señor de Runas", "La Conjuradora",
+        "El Vidente de Sombras", "El Enigmático", "El Portador de Luz", "El Tejedor de Hechizos",
+        "El Guardia del Grimoire", "El Sabio", "El Mente de Fuego", "El Eterno",
+        "El Hechicero Nocturno", "El Ilusionista", "El Voz del Abismo", "El Profeta",
+        "El Custodio de la Magia", "El Misterioso", "El Antiguo", "El Invocador",
+        "El Maestro de Encantamientos", "El Tenebroso", "El Sabio Errante", "El Portador de Runas",
+        "El Arcano de Medianoche", "El Tejedor de Sombras", "El Dominante", "El Iluminado",
+        "El Guardián de Portales", "El Señor del Viento", "El Profano", "El Voz de los Elementos",
         "El Silencioso", "El Conjurador de Estrellas", "El Místico", "El Errante",
-        "Caminante de los Planos", "El Observador", "Maestro de los Talismanes", "El Secreto"
+        "El Caminante de los Planos", "El Observador", "El Maestro de los Talismanes", "El Secreto"
         };
-
-
-
     }
 }
