@@ -1,5 +1,8 @@
-﻿using EspacioFabricaPersonajes;
+﻿using System.Text.Json.Nodes;
+using EspacioFabricaPersonajes;
 using EspacioInterfaz;
+using EspacioJson;
+using EspacioListas;
 using EspacioPersonajes;
-Personaje personaje = FabricaPersonajes.CrearPersonaje();
-personaje.MostrarPersonaje();
+List<Personaje> ListaPersonajes = PersonajesJson.LeerPersonajes("json/listapersonajes");
+Listas.MostrarListaPersonajes(ListaPersonajes);
