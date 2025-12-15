@@ -48,7 +48,8 @@ namespace EspacioListas
         {
             for(int i = 0; i < listaPersonajes.Count; i++)
             {
-                Console.WriteLine($"{i+1}: {listaPersonajes[i].datos.Nombre} {listaPersonajes[i].datos.Apodo}");
+                listaPersonajes[i].MostrarPersonaje();
+                Console.WriteLine($"----- ingrese {i+1} para seleccionar -----");
             }
         }
     }

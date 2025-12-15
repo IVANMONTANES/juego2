@@ -1,0 +1,172 @@
+[
+  {
+    "datos": {
+      "Tipo": "Hombre Lobo",
+      "Nombre": "Balthazar",
+      "Apodo": "El Feral",
+      "FechaNac": "1955-02-26T05:52:44.9254655",
+      "Edad": 70
+    },
+    "caracteristicas": {
+      "Velocidad": 10,
+      "Destreza": 4,
+      "Fuerza": 5,
+      "Nivel": 7,
+      "Armadura": 6,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Vampiro",
+      "Nombre": "Isolde",
+      "Apodo": "El Enigmático",
+      "FechaNac": "1484-10-16T15:56:30.3596409",
+      "Edad": 541
+    },
+    "caracteristicas": {
+      "Velocidad": 1,
+      "Destreza": 2,
+      "Fuerza": 6,
+      "Nivel": 8,
+      "Armadura": 4,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Mago",
+      "Nombre": "Selwyn",
+      "Apodo": "El Señor del Viento",
+      "FechaNac": "1805-09-29T00:41:31.9266039",
+      "Edad": 220
+    },
+    "caracteristicas": {
+      "Velocidad": 3,
+      "Destreza": 3,
+      "Fuerza": 8,
+      "Nivel": 6,
+      "Armadura": 1,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Hombre Lobo",
+      "Nombre": "Darian",
+      "Apodo": "El Colmillo Helado",
+      "FechaNac": "1985-02-19T19:45:06.8893506",
+      "Edad": 40
+    },
+    "caracteristicas": {
+      "Velocidad": 10,
+      "Destreza": 3,
+      "Fuerza": 2,
+      "Nivel": 7,
+      "Armadura": 6,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Mago",
+      "Nombre": "Radagast",
+      "Apodo": "El Místico",
+      "FechaNac": "1851-07-11T04:40:37.064665",
+      "Edad": 174
+    },
+    "caracteristicas": {
+      "Velocidad": 3,
+      "Destreza": 1,
+      "Fuerza": 5,
+      "Nivel": 3,
+      "Armadura": 5,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Mago",
+      "Nombre": "Magnus",
+      "Apodo": "El Eterno",
+      "FechaNac": "1788-05-08T00:43:22.763122",
+      "Edad": 237
+    },
+    "caracteristicas": {
+      "Velocidad": 6,
+      "Destreza": 3,
+      "Fuerza": 1,
+      "Nivel": 5,
+      "Armadura": 10,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Mago",
+      "Nombre": "Rincewind",
+      "Apodo": "El Señor del Viento",
+      "FechaNac": "1819-09-18T08:58:01.5048066",
+      "Edad": 206
+    },
+    "caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 1,
+      "Fuerza": 2,
+      "Nivel": 2,
+      "Armadura": 8,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Hombre Lobo",
+      "Nombre": "Theron",
+      "Apodo": "El Profano",
+      "FechaNac": "1962-09-24T21:00:39.9226766",
+      "Edad": 63
+    },
+    "caracteristicas": {
+      "Velocidad": 6,
+      "Destreza": 5,
+      "Fuerza": 5,
+      "Nivel": 3,
+      "Armadura": 1,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Vampiro",
+      "Nombre": "Thorne",
+      "Apodo": "El Voraz",
+      "FechaNac": "1648-12-27T01:44:39.5668173",
+      "Edad": 376
+    },
+    "caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 1,
+      "Fuerza": 5,
+      "Nivel": 8,
+      "Armadura": 2,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Hombre Lobo",
+      "Nombre": "Skoll",
+      "Apodo": "El Errante de la Noche",
+      "FechaNac": "1957-08-11T20:39:45.8461608",
+      "Edad": 68
+    },
+    "caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 2,
+      "Fuerza": 2,
+      "Nivel": 2,
+      "Armadura": 5,
+      "Salud": 100
+    }
+  }
+]
