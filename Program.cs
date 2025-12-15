@@ -10,4 +10,4 @@ await Interfaz.Menu(endPoint,ruta);
 */
 Personaje personaje1 = FabricaPersonajes.CrearPersonaje();
 Personaje personaje2 = FabricaPersonajes.CrearPersonaje();
-Combate.SimularCombate(personaje1,personaje2);
+Combate.JugarCombate(personaje1,personaje2);

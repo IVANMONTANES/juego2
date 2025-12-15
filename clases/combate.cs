@@ -86,6 +86,38 @@ namespace EspacioCombate
             }
         }
 
+        public static int DecidirMovimientoJugador(Personaje jugador, int curacionesDisponiblesJugador)
+        {
+            bool movimientoSeleccionado = false;
+            int movimiento = 0;
+            while (!movimientoSeleccionado)
+            {
+                Console.WriteLine("1: ATACAR");
+                Console.WriteLine("2: Curarse");
+                Console.WriteLine("Ingrese una opcion:");
+                string movimientoString = Console.ReadLine();
+                bool conversionExitosa = int.TryParse(movimientoString,out movimiento);
+                if(conversionExitosa && movimiento == 1)
+                {
+                    movimientoSeleccionado = true;
+                }
+                else if(conversionExitosa && movimiento == 2 && curacionesDisponiblesJugador > 0)
+                {
+                    movimientoSeleccionado = true;
+                }else if(conversionExitosa && movimiento == 2 && curacionesDisponiblesJugador <= 0)
+                {
+                    Console.WriteLine("No tiene curaciones disponibles");
+                }
+                else
+                {
+                    Console.WriteLine("No se indico una opcion valida");
+                }
+            }
+
+            return --movimiento;
+            
+        }
+
         public static void DescontarCuraciones(Personaje atacante,Personaje personaje1, Personaje personaje2, ref int curacionesDisponiblesPersonaje1, ref int curacionesDisponiblesPersonaje2)
         {
             if(atacante == personaje1)
@@ -249,6 +281,52 @@ namespace EspacioCombate
 
             // mostramos el resultado de la pelea //
             ResultadoPelea(personaje1,personaje2);
+        }
+
+        public static void JugarCombate(Personaje jugador, Personaje personaje2)
+        {
+            // presentamos la pelea y decidimos quien arranca y quien defiende //
+            PresentarPelea(jugador,personaje2);
+            Personaje atacante = DecidirQuienArranca(jugador,personaje2);
+            Personaje defensor = DecidirDefensor(jugador,personaje2,atacante);
+            Console.WriteLine($"Arranca:{atacante.datos.Nombre} {atacante.datos.Apodo}");
+            DibujarLinea();
+
+            // variable para controlar el numero de curaciones que pueden usar cada personaje //
+            int curacionesDisponiblesJugador = 3;
+            int curacionesDisponiblesPersonaje2 = 3;
+
+            // variables para controlar el numero de movimientos efectivos realizados y el numero de turnos //
+            int turnos = 1;
+            int movimientosEfectivosRealizados = 0;
+
+            while(jugador.caracteristicas.Salud > 0 && personaje2.caracteristicas.Salud > 0)
+            {
+                int movimiento = 0;
+                MostrarTurnos(ref turnos,movimientosEfectivosRealizados,atacante);
+                // mostramos los datos relavantes de cada personaje //
+                MostrarDatosRelevantes(jugador,curacionesDisponiblesJugador);
+                MostrarDatosRelevantes(personaje2,curacionesDisponiblesPersonaje2);
+                DibujarLinea();
+                if(atacante == jugador)
+                {
+                    // variable para guardar el movimiento del atacante //
+                    movimiento = DecidirMovimientoJugador(jugador,curacionesDisponiblesJugador);
+                }
+                else
+                {
+                    movimiento = DecidirMovimiento(atacante,curacionesDisponiblesJugador,curacionesDisponiblesPersonaje2,jugador,personaje2);
+                }
+                EfectuarMovimiento(atacante,defensor,movimiento,ref curacionesDisponiblesJugador,ref curacionesDisponiblesPersonaje2,jugador,personaje2,turnos);
+                movimientosEfectivosRealizados++;
+                CambiarRoles(ref atacante,ref defensor,jugador,personaje2);
+                AvanzarSiguienteTurno();
+                Console.WriteLine("\n");
+                DibujarLinea();
+            }
+
+            // mostramos el resultado de la pelea //
+            ResultadoPelea(jugador,personaje2);
         }
 
     }
