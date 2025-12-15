@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using ClasesApis;
 
 namespace EspacioApi
 {
@@ -61,6 +62,12 @@ namespace EspacioApi
             HttpResponseMessage respuesta = await ObtenerRespuesta(client,endPoint);
             string respuestaString = await ManejarRespuesta(respuesta);
             return respuestaString;
+        }
+
+        public static Frase ObtenerFrase(string respuestaString)
+        {
+            Frase frase = JsonSerializer.Deserialize<Frase>(respuestaString);
+            return frase;
         }
 
         

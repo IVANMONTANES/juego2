@@ -1,171 +1,171 @@
 [
   {
     "datos": {
-      "Tipo": "Hombre Lobo",
-      "Nombre": "Balthazar",
-      "Apodo": "El Feral",
-      "FechaNac": "1955-02-26T05:52:44.9254655",
-      "Edad": 70
+      "Tipo": "Mago",
+      "Nombre": "Valthorne",
+      "Apodo": "El Tenebroso",
+      "FechaNac": "1799-04-11T03:19:23.6371085",
+      "Edad": 226
     },
     "caracteristicas": {
-      "Velocidad": 10,
-      "Destreza": 4,
-      "Fuerza": 5,
-      "Nivel": 7,
+      "Velocidad": 9,
+      "Destreza": 2,
+      "Fuerza": 7,
+      "Nivel": 1,
       "Armadura": 6,
       "Salud": 100
     }
   },
   {
     "datos": {
-      "Tipo": "Vampiro",
-      "Nombre": "Isolde",
-      "Apodo": "El Enigmático",
-      "FechaNac": "1484-10-16T15:56:30.3596409",
-      "Edad": 541
+      "Tipo": "Mago",
+      "Nombre": "Saruman",
+      "Apodo": "El Observador",
+      "FechaNac": "1777-05-09T17:32:59.486583",
+      "Edad": 248
     },
     "caracteristicas": {
-      "Velocidad": 1,
+      "Velocidad": 5,
       "Destreza": 2,
-      "Fuerza": 6,
-      "Nivel": 8,
+      "Fuerza": 2,
+      "Nivel": 10,
       "Armadura": 4,
       "Salud": 100
     }
   },
   {
     "datos": {
-      "Tipo": "Mago",
-      "Nombre": "Selwyn",
-      "Apodo": "El Señor del Viento",
-      "FechaNac": "1805-09-29T00:41:31.9266039",
-      "Edad": 220
-    },
-    "caracteristicas": {
-      "Velocidad": 3,
-      "Destreza": 3,
-      "Fuerza": 8,
-      "Nivel": 6,
-      "Armadura": 1,
-      "Salud": 100
-    }
-  },
-  {
-    "datos": {
       "Tipo": "Hombre Lobo",
-      "Nombre": "Darian",
-      "Apodo": "El Colmillo Helado",
-      "FechaNac": "1985-02-19T19:45:06.8893506",
-      "Edad": 40
-    },
-    "caracteristicas": {
-      "Velocidad": 10,
-      "Destreza": 3,
-      "Fuerza": 2,
-      "Nivel": 7,
-      "Armadura": 6,
-      "Salud": 100
-    }
-  },
-  {
-    "datos": {
-      "Tipo": "Mago",
-      "Nombre": "Radagast",
-      "Apodo": "El Místico",
-      "FechaNac": "1851-07-11T04:40:37.064665",
-      "Edad": 174
-    },
-    "caracteristicas": {
-      "Velocidad": 3,
-      "Destreza": 1,
-      "Fuerza": 5,
-      "Nivel": 3,
-      "Armadura": 5,
-      "Salud": 100
-    }
-  },
-  {
-    "datos": {
-      "Tipo": "Mago",
-      "Nombre": "Magnus",
-      "Apodo": "El Eterno",
-      "FechaNac": "1788-05-08T00:43:22.763122",
-      "Edad": 237
-    },
-    "caracteristicas": {
-      "Velocidad": 6,
-      "Destreza": 3,
-      "Fuerza": 1,
-      "Nivel": 5,
-      "Armadura": 10,
-      "Salud": 100
-    }
-  },
-  {
-    "datos": {
-      "Tipo": "Mago",
-      "Nombre": "Rincewind",
-      "Apodo": "El Señor del Viento",
-      "FechaNac": "1819-09-18T08:58:01.5048066",
-      "Edad": 206
+      "Nombre": "Fenrir",
+      "Apodo": "El Aullador",
+      "FechaNac": "1973-06-16T20:51:42.0556612",
+      "Edad": 52
     },
     "caracteristicas": {
       "Velocidad": 5,
       "Destreza": 1,
-      "Fuerza": 2,
-      "Nivel": 2,
-      "Armadura": 8,
-      "Salud": 100
-    }
-  },
-  {
-    "datos": {
-      "Tipo": "Hombre Lobo",
-      "Nombre": "Theron",
-      "Apodo": "El Profano",
-      "FechaNac": "1962-09-24T21:00:39.9226766",
-      "Edad": 63
-    },
-    "caracteristicas": {
-      "Velocidad": 6,
-      "Destreza": 5,
       "Fuerza": 5,
-      "Nivel": 3,
-      "Armadura": 1,
+      "Nivel": 7,
+      "Armadura": 4,
       "Salud": 100
     }
   },
   {
     "datos": {
       "Tipo": "Vampiro",
-      "Nombre": "Thorne",
-      "Apodo": "El Voraz",
-      "FechaNac": "1648-12-27T01:44:39.5668173",
-      "Edad": 376
+      "Nombre": "Seraphine",
+      "Apodo": "El Profano",
+      "FechaNac": "1353-08-18T16:54:33.8250581",
+      "Edad": 672
     },
     "caracteristicas": {
       "Velocidad": 7,
-      "Destreza": 1,
+      "Destreza": 3,
       "Fuerza": 5,
-      "Nivel": 8,
+      "Nivel": 7,
+      "Armadura": 4,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Vampiro",
+      "Nombre": "Selene",
+      "Apodo": "El Errante",
+      "FechaNac": "1294-01-20T05:42:16.9032292",
+      "Edad": 731
+    },
+    "caracteristicas": {
+      "Velocidad": 3,
+      "Destreza": 1,
+      "Fuerza": 4,
+      "Nivel": 1,
+      "Armadura": 10,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Vampiro",
+      "Nombre": "Malthus",
+      "Apodo": "El Profano",
+      "FechaNac": "1805-12-06T20:48:44.0412736",
+      "Edad": 220
+    },
+    "caracteristicas": {
+      "Velocidad": 2,
+      "Destreza": 4,
+      "Fuerza": 3,
+      "Nivel": 9,
+      "Armadura": 7,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Mago",
+      "Nombre": "Malachai",
+      "Apodo": "El Señor de Runas",
+      "FechaNac": "1843-11-18T16:36:07.8775869",
+      "Edad": 182
+    },
+    "caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 2,
+      "Fuerza": 6,
+      "Nivel": 4,
+      "Armadura": 8,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Vampiro",
+      "Nombre": "Malachi",
+      "Apodo": "El Fantasma",
+      "FechaNac": "1566-12-23T04:21:07.785252",
+      "Edad": 458
+    },
+    "caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 1,
+      "Fuerza": 9,
+      "Nivel": 9,
+      "Armadura": 1,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Mago",
+      "Nombre": "Lucan",
+      "Apodo": "El Conjurador de Estrellas",
+      "FechaNac": "1796-04-29T14:35:32.2547302",
+      "Edad": 229
+    },
+    "caracteristicas": {
+      "Velocidad": 4,
+      "Destreza": 2,
+      "Fuerza": 3,
+      "Nivel": 3,
       "Armadura": 2,
       "Salud": 100
     }
   },
   {
     "datos": {
-      "Tipo": "Hombre Lobo",
-      "Nombre": "Skoll",
-      "Apodo": "El Errante de la Noche",
-      "FechaNac": "1957-08-11T20:39:45.8461608",
-      "Edad": 68
+      "Tipo": "Vampiro",
+      "Nombre": "Selarion",
+      "Apodo": "El Danza de Sombras",
+      "FechaNac": "1030-01-03T10:20:31.1059495",
+      "Edad": 995
     },
     "caracteristicas": {
-      "Velocidad": 7,
-      "Destreza": 2,
-      "Fuerza": 2,
-      "Nivel": 2,
-      "Armadura": 5,
+      "Velocidad": 9,
+      "Destreza": 5,
+      "Fuerza": 6,
+      "Nivel": 5,
+      "Armadura": 9,
       "Salud": 100
     }
   }

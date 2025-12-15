@@ -1,5 +1,7 @@
 ﻿using EspacioApi;
+using EspacioCombate;
 using EspacioFabricaPersonajes;
+using EspacioHistorialJson;
 using EspacioJson;
 using EspacioListas;
 using EspacioPersonajes;
@@ -54,20 +56,63 @@ namespace EspacioInterfaz
             jugador.MostrarPersonaje();
         }
 
+        public static void eliminarDosPrimeros(List<int> sorteos)
+        {
+            for(int i = 0; i < 2; i++)
+            {
+                sorteos.RemoveAt(0);
+            }
+        }
         public static void MostrarEnfretamientos(List<Personaje> listaPersonajes,List<int> sorteos)
         {
             int numeroDePelea = 1;
-            sorteos = Sorteo.SortearPeleas(listaPersonajes.Count);
-            List<Personaje> auxiliar = new List<Personaje>(listaPersonajes);
+            List<int> auxiliar = new List<int>(sorteos);
 
-            while(auxiliar.Count != 0)
+            while(auxiliar.Count != 0 && auxiliar.Count != 1)
             {
                 if(auxiliar.Count != 1)
                 {
-                    Console.WriteLine($"pelea {numeroDePelea}: {auxiliar[0].datos.Nombre} {auxiliar[0].datos.Apodo} vs {auxiliar[1].datos.Nombre} {auxiliar[1].datos.Apodo}");
+                    Console.WriteLine($"pelea {numeroDePelea}: {listaPersonajes[auxiliar[0]].datos.Nombre} {listaPersonajes[auxiliar[0]].datos.Apodo} vs {listaPersonajes[auxiliar[1]].datos.Nombre} {listaPersonajes[auxiliar[1]].datos.Apodo}");
+                    
                     auxiliar.RemoveAt(0);
                     auxiliar.RemoveAt(0);
                     numeroDePelea++;
+                }
+                if(auxiliar.Count == 1)
+                {
+                    Console.WriteLine($"{listaPersonajes[auxiliar[0]].datos.Nombre} {listaPersonajes[auxiliar[0]].datos.Apodo} avanza a la siguiente ronda por sorteo");
+                }
+            }
+        }
+
+        public static async Task JugarRonda(List<Personaje> listaPersonajes,List<int> sorteos, Personaje jugador,HttpClient client, string endPoint)
+        {
+            // mientras la lista con sorteos no esta vacia realizamos las peleas //
+            while(sorteos.Count != 0 && sorteos.Count != 1)
+            {
+                if(listaPersonajes[sorteos[0]] != jugador && listaPersonajes[sorteos[1]] != jugador)
+                {
+                    await Combate.SimularCombate(listaPersonajes[sorteos[0]],listaPersonajes[sorteos[1]],client,endPoint);
+                    // eliminamos la primera pelea //
+                    eliminarDosPrimeros(sorteos);
+                }
+                else
+                {
+                    if(jugador == listaPersonajes[sorteos[0]])
+                    {
+                        await Combate.JugarCombate(jugador,listaPersonajes[sorteos[1]],client,endPoint);
+                    }
+                    else
+                    {
+                        await Combate.JugarCombate(jugador,listaPersonajes[sorteos[0]],client,endPoint);
+                    }
+                    eliminarDosPrimeros(sorteos);
+                }
+
+                if(sorteos.Count == 1)
+                {
+                    Console.WriteLine($"{listaPersonajes[sorteos[0]].datos.Nombre} {listaPersonajes[sorteos[0]].datos.Apodo} avanza a la siguiente ronda por sorteo");
+                    Combate.GuardarOAgregarGanador(listaPersonajes[sorteos[0]]);
                 }
             }
         }
@@ -75,18 +120,25 @@ namespace EspacioInterfaz
         {
             HttpClient client = new HttpClient();
             // variable para determinar si se incluyen los insultos o no segun el exito de la api //
-            bool insultos;
-            string respuestaString = await Api.VerificarExitoApi(client,endPoint);
-            // flag para decidir si puede iniciar el juego o no //
-            insultos = !string.IsNullOrEmpty(respuestaString) ? true : false;
             // llamamos a la funcion para manejar la lista de personajes //
             List<Personaje> listaPersonajes = ManejarPersonajes(ruta);
             // mostramos los datos y caracteristicas de los personajes //
             Listas.MostrarListaPersonajes(listaPersonajes);
             Personaje jugador = SeleccionarPersonaje(listaPersonajes);
             MostrarPersonajeElegido(jugador);
-            List<int> sorteos = Sorteo.SortearPeleas(listaPersonajes.Count);
-            MostrarEnfretamientos(listaPersonajes,sorteos);
+            while(listaPersonajes.Count != 1)
+            {
+                List<int> sorteos = Sorteo.SortearPeleas(listaPersonajes.Count);
+                MostrarEnfretamientos(listaPersonajes,sorteos);
+                await JugarRonda(listaPersonajes,sorteos,jugador,client,endPoint);
+                listaPersonajes = HistorialJson.ObtenerGanadoresRonda();
+                // borramos los ganadores de la ronda del json //
+                HistorialJson.BorrarGanadoresRonda();
+            }
+
+            // borramos de vuelta los gandores para que no influyan en la siguiente partida //
+            HistorialJson.BorrarGanadoresRonda();
+            
         }
     }
 }

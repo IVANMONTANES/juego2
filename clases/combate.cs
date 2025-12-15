@@ -1,4 +1,9 @@
-﻿using EspacioFabricaPersonajes;
+﻿using System.Text.Encodings.Web;
+using System.Text.Json;
+using ClasesApis;
+using EspacioApi;
+using EspacioFabricaPersonajes;
+using EspacioHistorialJson;
 using EspacioPersonajes;
 
 namespace EspacioCombate
@@ -196,18 +201,47 @@ namespace EspacioCombate
             Console.WriteLine($"{personaje1.datos.Nombre} {personaje1.datos.Apodo} vs {personaje2.datos.Nombre} {personaje2.datos.Apodo}");
         }
 
-        public static void ResultadoPelea(Personaje personaje1, Personaje personaje2)
+        public static async Task ResultadoPelea(Personaje personaje1, Personaje personaje2,HttpClient client,string endPoint)
         {
             if(personaje1.caracteristicas.Salud <= 0)
             {
+                string respuestaString = await Api.VerificarExitoApi(client,endPoint);
+                bool puedeInsultar = respuestaString != null ? true : false;
+                if (puedeInsultar)
+                {
+                    Frase frase = Api.ObtenerFrase(respuestaString);
+                    Console.WriteLine($"{personaje1.datos.Nombre} {personaje1.datos.Apodo}: {frase.quote}");
+                }
+                
                 Console.WriteLine($"{personaje1.datos.Nombre} {personaje1.datos.Apodo} Ha muerto");
                 Console.WriteLine($"{personaje2.datos.Nombre} {personaje2.datos.Apodo} avanza de ronda");
             }
             else
             {
+                string respuestaString = await Api.VerificarExitoApi(client,endPoint);
+                bool puedeInsultar = respuestaString != null ? true : false;
+                if (puedeInsultar)
+                {
+                    Frase frase = Api.ObtenerFrase(respuestaString);
+                    Console.WriteLine($"{personaje2.datos.Nombre} {personaje2.datos.Apodo}: {frase.quote}");
+                }
                 Console.WriteLine($"{personaje2.datos.Nombre} {personaje2.datos.Apodo} Ha muerto");
                 Console.WriteLine($"{personaje1.datos.Nombre} {personaje1.datos.Apodo} avanza de ronda");
             }
+        }
+
+        public static Personaje ObtenerGanador(Personaje personaje1, Personaje personaje2)
+        {
+            Personaje ganador = null;
+            if(personaje1.caracteristicas.Salud <= 0)
+            {
+                ganador = personaje2;
+            }
+            else
+            {
+                ganador = personaje1;
+            }
+            return ganador;
         }
 
         public static void DibujarLinea()
@@ -243,9 +277,49 @@ namespace EspacioCombate
             Console.ReadKey();
         }
 
+        public static void GuardarOAgregarGanador(Personaje ganador)
+        {
+            string ruta = "json/ganadoresRonda.json";
+            // verificamos si existe el archivo //
+            if (HistorialJson.Existe(ruta))
+            {
+                // leemos el json //
+                string json = File.ReadAllText(ruta);
+
+                // deserializamos a una lista //
+                List<Personaje> ganadoresRonda = JsonSerializer.Deserialize<List<Personaje>>(json);
+
+                // agregamos el personaje a la lista //
+                ganadoresRonda.Add(ganador);
+
+                // serializamos la lista //
+                JsonSerializerOptions opcionesSerializado = new JsonSerializerOptions();
+                opcionesSerializado.WriteIndented = true;
+                opcionesSerializado.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+                string json2 = JsonSerializer.Serialize(ganadoresRonda,opcionesSerializado);
+
+                // guardamos la lista serializada //
+                File.WriteAllText(ruta,json2);
+            }
+            else
+            {
+                // creamos la lista //
+                List<Personaje> ganadoresRonda = new List<Personaje>();
+                ganadoresRonda.Add(ganador);
+
+                // serializamos la lista //
+                JsonSerializerOptions opcionesSerializado = new JsonSerializerOptions();
+                opcionesSerializado.WriteIndented = true;
+                opcionesSerializado.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+                string json = JsonSerializer.Serialize(ganadoresRonda,opcionesSerializado);
+
+                // guardamos la lista serializada //
+                File.WriteAllText(ruta,json);
+            }
+        }
         
 
-        public static void SimularCombate(Personaje personaje1, Personaje personaje2)
+        public static async Task SimularCombate(Personaje personaje1, Personaje personaje2,HttpClient client,string endPoint)
         {
             // presentamos la pelea y decidimos quien arranca y quien defiende //
             PresentarPelea(personaje1,personaje2);
@@ -280,10 +354,17 @@ namespace EspacioCombate
             }
 
             // mostramos el resultado de la pelea //
-            ResultadoPelea(personaje1,personaje2);
+            await ResultadoPelea(personaje1,personaje2,client,endPoint);
+
+            // guardamos el ganador //
+            Personaje ganador = ObtenerGanador(personaje1,personaje2);
+            // restablecemos la vida del ganador a 100 //
+            ganador.caracteristicas.Salud = 100;
+            GuardarOAgregarGanador(ganador);
+            
         }
 
-        public static void JugarCombate(Personaje jugador, Personaje personaje2)
+        public static async Task JugarCombate(Personaje jugador, Personaje personaje2,HttpClient client,string endPoint)
         {
             // presentamos la pelea y decidimos quien arranca y quien defiende //
             PresentarPelea(jugador,personaje2);
@@ -326,7 +407,15 @@ namespace EspacioCombate
             }
 
             // mostramos el resultado de la pelea //
-            ResultadoPelea(jugador,personaje2);
+            await ResultadoPelea(jugador,personaje2,client,endPoint);
+
+            // guardamos el ganador //
+            Personaje ganador = ObtenerGanador(jugador,personaje2);
+            // restablecemos la vida del ganador a 100 //
+            ganador.caracteristicas.Salud = 100;
+            GuardarOAgregarGanador(ganador);
+
+
         }
 
     }

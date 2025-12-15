@@ -1,0 +1,70 @@
+[
+  {
+    "datos": {
+      "Tipo": "Hombre Lobo",
+      "Nombre": "Fenrir",
+      "Apodo": "El Aullador",
+      "FechaNac": "1973-06-16T20:51:42.0556612",
+      "Edad": 52
+    },
+    "caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 1,
+      "Fuerza": 5,
+      "Nivel": 7,
+      "Armadura": 4,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Hombre Lobo",
+      "Nombre": "Fenrir",
+      "Apodo": "El Aullador",
+      "FechaNac": "1973-06-16T20:51:42.0556612",
+      "Edad": 52
+    },
+    "caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 1,
+      "Fuerza": 5,
+      "Nivel": 7,
+      "Armadura": 4,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Mago",
+      "Nombre": "Saruman",
+      "Apodo": "El Observador",
+      "FechaNac": "1777-05-09T17:32:59.486583",
+      "Edad": 248
+    },
+    "caracteristicas": {
+      "Velocidad": 5,
+      "Destreza": 2,
+      "Fuerza": 2,
+      "Nivel": 10,
+      "Armadura": 4,
+      "Salud": 100
+    }
+  },
+  {
+    "datos": {
+      "Tipo": "Vampiro",
+      "Nombre": "Seraphine",
+      "Apodo": "El Profano",
+      "FechaNac": "1353-08-18T16:54:33.8250581",
+      "Edad": 672
+    },
+    "caracteristicas": {
+      "Velocidad": 7,
+      "Destreza": 3,
+      "Fuerza": 5,
+      "Nivel": 7,
+      "Armadura": 4,
+      "Salud": 100
+    }
+  }
+]
